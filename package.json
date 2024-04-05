@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node index.js"
+    "start": "node index.js",
+    "tsc": "tsc"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "jest": "^29.7.0",
+    "tsx": "^4.7.2",
     "typescript": "^5.4.4"
   },
   "jest": {

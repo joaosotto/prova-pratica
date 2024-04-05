@@ -8,6 +8,7 @@ export class RoboDeLimpeza {
   constructor() {
     this.fila = new Fila();
     this.tarefasExecutadas = [];
+    this.elementoRetirado = "";
   }
 
   adicionarTarefa(tarefa: string): void {
@@ -22,13 +23,13 @@ export class RoboDeLimpeza {
     return this.fila.desenfileirar();
   }
 
-  executarTodasTarefas() {
+  async executarTodasTarefas() {
     if (!this.fila.vazia) {
       this.elementoRetirado = this.fila.desenfileirar();
       this.tarefasExecutadas.push(this.elementoRetirado);
     } else {
-      console.log(this.elementoRetirado);
-      return this.elementoRetirado;
+      console.log(this.tarefasExecutadas);
+      return this.tarefasExecutadas;
     }
   }
 }
