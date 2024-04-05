@@ -6,12 +6,12 @@ const robo = new RoboDeLimpeza();
 const app = express();
 
 app.get("/executar_todas_tarefas", (req, res) => {
-  const operacao = await robo.executarTodasTarefas();
+  const operacao = robo.executarTodasTarefas();
   if (operacao) {
     return {
-      "mensagem": "Todas as tarefas foram executadas com sucesso.",
-      "tarefasExecutadas": operacao 
-    }
+      mensagem: "Todas as tarefas foram executadas com sucesso.",
+      tarefasExecutadas: operacao,
+    };
   }
 });
 

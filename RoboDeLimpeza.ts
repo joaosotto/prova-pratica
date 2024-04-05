@@ -11,8 +11,8 @@ export class RoboDeLimpeza {
     this.elementoRetirado = "";
   }
 
-  adicionarTarefa(tarefa: string): void {
-    this.fila.enfileirar(tarefa);
+  adicionarTarefa(tarefa: string): string {
+    return this.fila.enfileirar(tarefa);
   }
 
   executarProximaTarefa(): string {
@@ -23,13 +23,17 @@ export class RoboDeLimpeza {
     return this.fila.desenfileirar();
   }
 
-  async executarTodasTarefas() {
-    if (!this.fila.vazia) {
+  executarTodasTarefas() {
+
+    if(this.fila.vazia()){
+      return 'fila vazia'
+    }
+
+    while (!this.fila.vazia) {
       this.elementoRetirado = this.fila.desenfileirar();
       this.tarefasExecutadas.push(this.elementoRetirado);
-    } else {
-      console.log(this.tarefasExecutadas);
-      return this.tarefasExecutadas;
-    }
   }
+    return this.tarefasExecutadas
+
 }
+
