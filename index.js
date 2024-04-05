@@ -12,8 +12,6 @@ app.get("/executar_todas_tarefas", (req, res) => {
       "mensagem": "Todas as tarefas foram executadas com sucesso.",
       "tarefasExecutadas": operacao 
     }
-  } else {
-    
   }
 });
 
